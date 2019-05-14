@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/login.css" type="text/css" />
+    <link rel="stylesheet" href="css/footer.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+  </head>
+
+  <body>
+    <% include partials/navbar%>
+    <div class="container mt-4 box">
+      <h1 class="head-text text-center">Welcome!</h1>
+      <form action="/login" method="POST">
+        <div class="container login-form">
+          <h2 class="login-title">- Please Login -</h2>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <form>
+                <div class="input-group login-userinput mt-4 ">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                  <input id="txtUser" type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="input-group mt-4">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                  <input  id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+                  <span id="showPassword" class="input-group-btn">
+                    <button class="btn btn-default reveal" type="button"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                  </span>  
+                </div>
+                <button class="btn btn-primary btn-block login-button mt-4" type="submit"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+                <div class="checkbox login-options mt-4">
+                  <label><input type="checkbox"/> Remember Me</label>
+                  <a href="#" class="login-forgot">Forgot Username/Password?</a>
+                </div>		
+              </form>			
+            </div>
+          </div>
+          <%if(message){%>
+            <div class="alert alert-danger message mt-4" role="alert">
+                <i class="fa fa-exclamation" aria-hidden="true"></i>
+              <%=message%>
+            </div>
+            <%}%>
+        </div>
+          
+        </div>
+      </form>
+    </div>
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

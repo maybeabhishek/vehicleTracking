@@ -1,0 +1,30 @@
+.footer {
+  padding: 10px 0 60px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.footer h4 {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer address {
+  font-size: 12px;
+}
+
+.footer a {
+  position: relative;
+  top: 5px;
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: orange;
+}
+
+.icon {
+  height: 60px;
+}
+/*# sourceMappingURL=footer.css.map */

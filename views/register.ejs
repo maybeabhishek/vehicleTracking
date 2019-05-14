@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="google-site-verification"
+      content="bcPE7I5x02j0ce8_qICY_EX6nOw5IE6bEpkWUbKuNE8"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/registration.css"
+    />
+  </head>
+
+  <body>
+    <% include partials/navbar %>
+    <form
+      action="/register "
+      id="form"
+      method="POST"
+      onsubmit="event.preventDefault(); validate();"
+    >
+      <h1>Register</h1>
+      <input placeholder="First name" name="firstname"/>
+      <input placeholder="Last name" name="lastname"/>
+      <input placeholder="Contact" name="contact"/>
+      <input placeholder="Age" name="age"/>
+      <input placeholder="Username" name="username"/>
+      <input type="text" placeholder="Email" name="email"/>
+      <input type="password" placeholder="Password" name="pass" id="pass" />
+      <input type="password" placeholder="Retype Password" name="passconf" id="passconf" />
+      <button>Register</button>
+      <% if(message) {%>
+          <div class="alert alert-danger" id="err" role="alert">
+            <strong>Error: </strong>
+            <%=message%>
+          </div>
+        <%}%>
+    </form>
+   
+    <script>
+      function validate() {
+        var pass = document.getElementById("pass").value;
+        var passconf = document.getElementById("passconf").value;
+        if (pass != passconf)
+          document.getElementById("err").innerHTML = "Passwords don't match";
+        else document.getElementById("form").submit();
+      }
+    </script>
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </body>
+</html>

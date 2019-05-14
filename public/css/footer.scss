@@ -1,0 +1,26 @@
+.footer {
+    padding: 10px 0 60px;
+    background: rgba(0,0,0,.05);
+    h4 {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    address {
+      font-size: 12px;
+    }
+    
+    a {
+      position: relative;
+      top: 5px;
+      color: dodgerblue;
+      text-decoration: none;
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+
+  .icon{
+      height: 60px;
+  }

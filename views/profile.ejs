@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/footer.css" type="text/css" />
+  </head>
+  <body>
+    <% include partials/navbar %>
+    <div class="container mt-4">
+      <h1 class="mt-2 text-capitalize">Welcome, <%=username.username%></h1>
+      <h5 class="text-secondary">Check your shipments</h5>
+      <hr>
+    <table class="table mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Shipment Id</th>
+            <th scope="col">Description</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+            <th scope="col">Track</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < shipments.length; i++) { %>
+          <tr>
+            <th scope="row"><%=i+1%></th>
+            <td><%= shipments[i].id%></td>
+            <td><%= shipments[i].desc%></td>
+            <td><%= shipments[i].lat%></td>
+            <td><%= shipments[i].lng%></td>
+            <td><a href= "/track/<%=shipments[i].track%>">Track</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </body>
+</html>

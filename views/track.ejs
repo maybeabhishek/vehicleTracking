@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vehicle Tracking</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/track.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  </head>
+  <body>
+    <%include partials/navbar%>
+    <h1 class="heading mt-4">Vehicle Position</h1>
+    <a class="btn btn-primary mt-4" href = "/profile"><i class="fas fa-arrow-left"></i>  Go Back</a>
+    <div id="map" data-lat="<%=loc.lat%>" data-lng="<%=loc.lng%>" class="mt-4"></div>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Zvb61HvDtcAUeqy6_avAql1FJfv01sM&callback=initMap"
+    ></script>
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/js/track.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </body>
+</html>

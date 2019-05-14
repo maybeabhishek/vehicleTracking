@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #E9F8DF;
+  -webkit-font-smoothing: antialiased;
+}
+
+.heading {
+  width: 70vw;
+  margin: auto;
+}
+
+.btn {
+  margin: 0 15vw;
+}
+
+#map {
+  width: 70%;
+  height: 600px;
+  background-color: grey;
+  margin: auto;
+}
+/*# sourceMappingURL=track.css.map */
