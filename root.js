@@ -24,6 +24,8 @@ router.get("/profile", middleware.isAuthenticated, function (req, res) {
 			lng: 144.567
 		}
 	];
+
+	console.log(req.user.username)
 	res.render("profile", {
 		shipments: shipments
 	});
@@ -86,34 +88,13 @@ router.post("/register", function (req, res) {
 		age: req.body.age,
 		email: req.body.email
 	});
-
-	console.log(newUser);
-
-	User.register(newUser, req.body.pass, function (err, user) {
+	User.register(newUser, req.body.password, function (err, user) {
 		if (err) {
 			console.log(err)
 			message = err.message;
 			return res.redirect("/register?message=" + message);
 		}
-		console.log(req.body.pass)
-		passport.authenticate("local", function (error, user, info) {
-			// this will execute in any case, even if a passport strategy will find an error
-			// log everything to console
-			console.log("askdhhksjdafvgajdgvfjasdgvjash");
-			console.log(error);
-			console.log(user);
-			console.log(info);
-
-			if (error) {
-				res.status(401).send(error);
-			} else if (!user) {
-				res.status(401).send(info);
-			} else {
-				next();
-			}
-
-			res.status(401).send(info);
-		})(req, res, function () {
+		passport.authenticate("local")(req, res, function () {
 			console.log("Reached!!\n")
 			res.redirect("/profile");
 		});

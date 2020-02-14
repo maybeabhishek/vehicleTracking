@@ -26,7 +26,7 @@
   <body>
     <% include partials/navbar %>
     <form
-      action="/register "
+      action="/register"
       id="form"
       method="POST"
       onsubmit="event.preventDefault(); validate();"
@@ -36,9 +36,9 @@
       <input placeholder="Last name" name="lastname"/>
       <input placeholder="Contact" name="contact"/>
       <input placeholder="Age" name="age"/>
-      <input placeholder="Username" name="username"/>
       <input type="text" placeholder="Email" name="email"/>
-      <input type="password" placeholder="Password" name="pass" id="pass" />
+      <input placeholder="Username" name="username"/>
+      <input type="password" placeholder="Password" name="password" id="pass" />
       <input type="password" placeholder="Retype Password" name="passconf" id="passconf" />
       <button>Register</button>
       <% if(message) {%>
